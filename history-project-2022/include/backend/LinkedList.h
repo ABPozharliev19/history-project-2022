@@ -8,6 +8,7 @@ class Node;
 template <typename T>
 class LinkedList
 {
+
 public:
 	LinkedList()
 	{
@@ -38,6 +39,16 @@ public:
 				m_lastNode = newNode;
 			}
 		}
+	}
+
+	T& operator[](unsigned int index)
+	{
+		if (index >= size())
+		{
+			throw new std::exception("Index out of bound");
+		}
+
+		return getElementAtIndex(index);
 	}
 
 	void push_back(const T& data)
@@ -75,7 +86,32 @@ public:
 		}
 	}
 
-	void printList()
+	unsigned int size()
+	{
+		if (isHeadInitialised)
+		{
+			if (m_lastNode == m_head)
+			{
+				return 1;
+			}
+
+			unsigned int listSize = 1;
+
+			Node<T>* temp = m_head;
+
+			while (temp->m_nextNode != NULL)
+			{
+				listSize++;
+				temp = temp->m_nextNode;
+			}
+			
+			return listSize;
+		}
+
+		return 0;
+	}
+
+	void printList() const
 	{
 		Node<T>* temp = m_head;
 
@@ -89,13 +125,25 @@ public:
 	}
 
 private:
+	T& getElementAtIndex(unsigned int index)
+	{
+		Node<T>* temp = m_head;
+
+		unsigned int counter = 0;
+
+		while (counter != index)
+		{
+			temp = temp->m_nextNode;
+		}
+
+		return temp->m_data;
+		}
+
+private:
 	Node<T>* m_head = NULL;
 	Node<T>* m_lastNode = NULL;
 
 	bool isHeadInitialised;
-
-private:
-
 };
 
 template <typename T>
