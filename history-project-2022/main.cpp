@@ -10,7 +10,9 @@ int main()
 
 	kekw[0] = 2;
 
-	std::cout << kekw[0];
+	std::cout << kekw.empty();
+
+	std::cout << kekw.size();
 
 	
 }

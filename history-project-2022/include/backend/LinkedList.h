@@ -86,7 +86,7 @@ public:
 		}
 	}
 
-	unsigned int size()
+	unsigned int size() const 
 	{
 		if (isHeadInitialised)
 		{
@@ -109,6 +109,11 @@ public:
 		}
 
 		return 0;
+	}
+
+	bool empty() const
+	{
+		return size() == 0;
 	}
 
 	void printList() const
