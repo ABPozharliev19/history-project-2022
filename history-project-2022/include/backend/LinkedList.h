@@ -60,6 +60,21 @@ public:
 		}
 	}
 
+	void pop_back()
+	{
+		if (m_lastNode == m_head)
+		{
+			m_head->m_data = NULL;
+
+			isHeadInitialised = false;
+		}
+		else
+		{
+			m_lastNode = m_lastNode->m_previousNode;
+			m_lastNode->m_nextNode = NULL;
+		}
+	}
+
 	void printList()
 	{
 		Node<T>* temp = m_head;
