@@ -29,6 +29,7 @@
     <None Include="frontend\.gitkeep" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\backend\LinkedList.h" />
     <ClInclude Include="libs\sqlite3.h" />
     <ClInclude Include="libs\sqlite3ext.h" />
   </ItemGroup>
