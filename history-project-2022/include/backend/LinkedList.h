@@ -37,8 +37,27 @@ public:
 				m_lastNode->m_nextNode = newNode;
 
 				m_lastNode = newNode;
+
+				delete newNode;
 			}
 		}
+	}
+
+	~LinkedList()
+	{
+		Node<T>* temp = m_lastNode;
+
+		while (temp->m_previousNode != NULL)
+		{
+			temp = temp->m_previousNode;
+
+			delete temp->m_nextNode;
+		}
+
+		delete m_head;
+		delete temp;
+
+		delete m_head;
 	}
 
 	T& operator[](unsigned int index)
@@ -68,12 +87,18 @@ public:
 			m_lastNode->m_nextNode = newNode;
 
 			m_lastNode = newNode;
+
+			delete newNode;
 		}
 	}
 
 	void pop_back()
 	{
-		if (m_lastNode == m_head)
+		if (empty())
+		{
+			return;
+		}
+		else if (m_lastNode == m_head)
 		{
 			m_head->m_data = NULL;
 

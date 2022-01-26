@@ -9,10 +9,12 @@ int main()
 	LinkedList<int> kekw(ok);
 
 	kekw[0] = 2;
-
-	std::cout << kekw.empty();
-
-	std::cout << kekw.size();
-
 	
+	kekw.pop_back();
+
+	LinkedList<int> dobre;
+
+	dobre.pop_back();
+
+	std::cout << 1;
 }
