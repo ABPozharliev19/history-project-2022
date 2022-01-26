@@ -18,7 +18,7 @@ public:
 		isHeadInitialised = false;
 	}
 
-	LinkedList(std::vector<T> values)
+	LinkedList(const std::vector<T>& values)
 	{
 		m_head = new Node<T>(values[0], NULL, NULL);
 
@@ -40,7 +40,7 @@ public:
 		}
 	}
 
-	void push_back(T data)
+	void push_back(const T& data)
 	{
 		// If the head hasn't been initialized
 		if (!isHeadInitialised)
@@ -53,7 +53,9 @@ public:
 		else
 		{
 			Node<T>* newNode = new Node<T>(data, m_lastNode, NULL);
+
 			m_lastNode->m_nextNode = newNode;
+
 			m_lastNode = newNode;
 		}
 	}
@@ -62,12 +64,12 @@ public:
 	{
 		Node<T>* temp = m_head;
 
-		std::cout << temp->m_data;
+		std::cout << temp->m_data<<std::endl;
 
 		while (temp->m_nextNode != NULL)
 		{
 			temp = temp->m_nextNode;
-			std::cout << temp->m_data;
+			std::cout << temp->m_data<<std::endl;
 		} 
 	}
 
