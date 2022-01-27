@@ -19,6 +19,35 @@ public:
 		isHeadInitialised = false;
 	}
 
+	LinkedList(unsigned int size)
+	{
+		m_head = new Node<T>;
+			
+		m_lastNode = m_head;
+
+		if (size > 0)
+		{
+			isHeadInitialised = true;
+		}
+
+		else
+		{
+			isHeadInitialised = false;
+		}
+		
+		if (size >= 2)
+		{
+			for (unsigned int i = 1; i < size; i++)
+			{
+				Node<T>* newNode = new Node<T>(NULL, m_lastNode, NULL);
+
+				m_lastNode->m_nextNode = newNode;
+
+				m_lastNode = newNode;
+			}
+		}
+	}
+
 	LinkedList(const std::vector<T>& values)
 	{
 		m_head = new Node<T>(values[0], NULL, NULL);
@@ -37,8 +66,6 @@ public:
 				m_lastNode->m_nextNode = newNode;
 
 				m_lastNode = newNode;
-
-				delete newNode;
 			}
 		}
 	}
@@ -53,11 +80,7 @@ public:
 
 			delete temp->m_nextNode;
 		}
-
-		delete m_head;
 		delete temp;
-
-		delete m_head;
 	}
 
 	T& operator[](unsigned int index)
@@ -87,8 +110,6 @@ public:
 			m_lastNode->m_nextNode = newNode;
 
 			m_lastNode = newNode;
-
-			delete newNode;
 		}
 	}
 
@@ -150,8 +171,9 @@ public:
 		while (temp->m_nextNode != NULL)
 		{
 			temp = temp->m_nextNode;
-			std::cout << temp->m_data<<std::endl;
-		} 
+			std::cout << temp->m_data << std::endl;
+			
+		}
 	}
 
 private:
