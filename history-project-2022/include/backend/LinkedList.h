@@ -93,6 +93,14 @@ public:
 		return getElementAtIndex(index);
 	}
 
+	void push_back(const std::vector<T>& values)
+	{
+		for (unsigned int i = 0; i < values.size(); i++)
+		{
+			push_back(values[i]);
+		}
+	}
+
 	void push_back(const T& data)
 	{
 		// If the head hasn't been initialized
@@ -186,10 +194,11 @@ private:
 		while (counter != index)
 		{
 			temp = temp->m_nextNode;
+			counter++;
 		}
 
 		return temp->m_data;
-		}
+	}
 
 private:
 	Node<T>* m_head = NULL;
