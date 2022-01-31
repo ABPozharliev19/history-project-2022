@@ -22,6 +22,7 @@
     <ClCompile Include="libs\shell.c" />
     <ClCompile Include="libs\sqlite3.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\backend\HistoryEvents.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore" />
@@ -29,7 +30,9 @@
     <None Include="frontend\.gitkeep" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\backend\HistoryEvents.h" />
     <ClInclude Include="include\backend\LinkedList.h" />
+    <ClInclude Include="include\backend\SQLStatements.h" />
     <ClInclude Include="libs\sqlite3.h" />
     <ClInclude Include="libs\sqlite3ext.h" />
   </ItemGroup>

@@ -24,6 +24,9 @@
     <ClCompile Include="libs\shell.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\backend\HistoryEvents.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore" />
@@ -38,6 +41,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\backend\LinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\backend\HistoryEvents.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\backend\SQLStatements.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
