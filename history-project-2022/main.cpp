@@ -5,8 +5,10 @@ int main()
 {
 	HistoryEvents eventManager;
 
-	setFullScreen();
-	setColor(11);
-	printLogo();
+	std::map<std::string, std::string> konche;
+
+	konche.insert({ "Month", "0" });
+
+	std::cout<<eventManager.getEventByFilter(konche);
 }
 

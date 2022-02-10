@@ -70,6 +70,8 @@ std::string HistoryEvents::getAllEvents()
 	char* errMsg;
 	const char* data = "";
 
+	resultsSelect = "";
+
 	if (sqlite3_exec(db, getAllEventsQuery, callbackSelectEvents, (void*)data, &errMsg) != SQLITE_OK)
 	{
 		std::cout << errMsg;
@@ -99,10 +101,42 @@ int HistoryEvents::callbackSelectEvents(void* callback, int size, char** data, c
 	return 0;
 }
 
-int HistoryEvents::callbackCreateTable(void* NotUsed, int size, char** data, char** columnName) {
+int HistoryEvents::callbackCreateTable(void* NotUsed, int size, char** data, char** columnName)
+{
 	for (int i = 0; i < size; i++)
 	{
 		std::cout << columnName[i] << " = " << data[i] ? data[i] : "NULL";
 	}
 	return 0;
+}
+
+std::string HistoryEvents::getEventByFilter(std::map<std::string, std::string> filters)
+{
+	std::string eventFilterQuery = "SELECT EventId, Month, Year, Location, Reason, Leader, Participants, Results FROM HistoryEvents "
+								   "WHERE (";
+
+	const char* data = "";
+
+	for(auto& filter : filters)
+	{
+		eventFilterQuery = eventFilterQuery + filter.first + " = " + "\"" + filter.second + "\"" + "AND";
+	}
+
+	eventFilterQuery = eventFilterQuery.substr(0, eventFilterQuery.size() - 3);
+
+	eventFilterQuery = eventFilterQuery + ")";
+
+	char* errMsg;
+
+	if(sqlite3_exec(db, eventFilterQuery.c_str(), callbackSelectEvents, (void*)data, &errMsg) != SQLITE_OK)
+	{
+		std::cout << errMsg;
+		sqlite3_free(errMsg);
+
+		return "Error";
+	}
+
+	return resultsSelect;
+
+	
 }

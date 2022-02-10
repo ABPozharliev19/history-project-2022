@@ -4,12 +4,15 @@
 
 #include <iostream>
 #include <string>
+#include <map>
 
 class HistoryEvents
 {
 public:
 	HistoryEvents();
+
 	~HistoryEvents();
+
 	bool insertEvent(
 		std::string month,
 		std::string year,
@@ -21,6 +24,9 @@ public:
 	);
 
 	std::string getAllEvents();
+
+	std::string getEventByFilter(std::map<std::string,
+								 std::string> filters);
 
 private:
 	static int callbackCreateTable( 
