@@ -5,8 +5,7 @@
 
 void setColor(int color)
 {
-    if (STD_OUTPUT_HANDLE) 
-    {
+    if (STD_OUTPUT_HANDLE) {
         SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
     }
 }
@@ -26,7 +25,7 @@ void setFullScreen()
 
 void printLogo()
 {
-    setColor(11);
+    
     goToCoordinates(22, 7);     std::cout << "____    ____  ___   ____    ____ ____    ____  __        ______   .__   __.";
     goToCoordinates(22, 8);     std::cout << "\\   \\  /   / /   \\  \\   \\  /   / \\   \\  /   / |  |      /  __  \\  |  \\ |  |";
     goToCoordinates(22, 9);     std::cout << " \\   \\/   / /  ^  \\  \\   \\/   /   \\   \\/   /  |  |     |  |  |  | |   \\|  |";

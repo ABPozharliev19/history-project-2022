@@ -6,5 +6,6 @@ int main()
 	HistoryEvents eventManager;
 
 	setFullScreen();
+	setColor(11);
 	printLogo();
 }
