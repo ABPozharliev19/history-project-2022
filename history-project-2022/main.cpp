@@ -5,10 +5,12 @@ int main()
 {
 	HistoryEvents eventManager;
 
-	std::map<std::string, std::string> konche;
+	std::map<std::string, std::string> gosho;
 
-	konche.insert({ "Month", "0" });
+	gosho.insert({ "EventId", "2"});
 
-	std::cout<<eventManager.getEventByFilter(konche);
+	eventManager.deleteEventByFilter(gosho);
+
+	eventManager.getAllEvents();
 }
 

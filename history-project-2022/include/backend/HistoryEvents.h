@@ -28,6 +28,9 @@ public:
 	std::string getEventByFilter(std::map<std::string,
 								 std::string> filters);
 
+	bool deleteEventByFilter(std::map<std::string,
+									std::string> filters);
+
 private:
 	static int callbackCreateTable( 
 		void* NotUsed,
@@ -38,6 +41,13 @@ private:
 
 	static int callbackSelectEvents(
 		void* callback,
+		int size,
+		char** data,
+		char** columnName
+	);
+
+	static int callbackDeleteEvents(
+		void* notUsed,
 		int size,
 		char** data,
 		char** columnName
