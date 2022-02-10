@@ -20,26 +20,37 @@ public:
 		std::string participants = "NULL"
 	);
 
+	std::string getAllEvents();
+
 private:
 	static int callbackCreateTable( 
 		void* NotUsed,
-		int argc,
-		char** argv,
-		char** azColName
+		int size,
+		char** data,
+		char** columnName
+	);
+
+	static int callbackSelectEvents(
+		void* callback,
+		int size,
+		char** data,
+		char** columnName
 	);
 
 private:
 	sqlite3* db;
 
 	static constexpr const char* createDatabase =
-		"CREATE TABLE IF NOT EXISTS HistoryEvents("
-		"    EventId INTEGER PRIMARY KEY AUTOINCREMENT,"
-		"    Month VARCHAR NOT NULL,"
-		"    Year VARCHAR NOT NULL,"
-		"    Location VARCHAR NOT NULL,"
-		"    Reason VARCHAR,"
-		"    Leader VARCHAR,"
-		"    Participants VARCHAR,"
-		"    Results VARCHAR NOT NULL"
-		")";
+	"CREATE TABLE IF NOT EXISTS HistoryEvents("
+	"    EventId INTEGER PRIMARY KEY AUTOINCREMENT,"
+	"    Month VARCHAR NOT NULL,"
+	"    Year VARCHAR NOT NULL,"
+	"    Location VARCHAR NOT NULL,"
+	"    Reason VARCHAR,"
+	"    Leader VARCHAR,"
+	"    Participants VARCHAR,"
+	"    Results VARCHAR NOT NULL"
+	")";
+
+	 static std::string resultsSelect;
 };

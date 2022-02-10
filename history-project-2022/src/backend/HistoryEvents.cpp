@@ -1,5 +1,7 @@
 #include "../../include/backend/HistoryEvents.h"
 
+std::string HistoryEvents::resultsSelect;
+
 HistoryEvents::HistoryEvents()
 {
 	int wasConnectionEstablished = sqlite3_open("events.db", &db);
@@ -49,7 +51,7 @@ bool HistoryEvents::insertEvent(std::string month,
 					
 	char* errMsg;
 
-	if (sqlite3_exec(db, insertIntoTable.c_str(), callbackCreateTable, 0, &errMsg))
+	if (sqlite3_exec(db, insertIntoTable.c_str(), callbackCreateTable, 0, &errMsg) != SQLITE_OK)
 	{
 		std::cout<<errMsg;
 
@@ -57,12 +59,44 @@ bool HistoryEvents::insertEvent(std::string month,
 
 		return false;
 	}
-	else
+	return true;
+
+}
+
+std::string HistoryEvents::getAllEvents()
+{
+	const char* getAllEventsQuery = "SELECT EventId, Month, Year, Location, Reason, Leader, Participants, Results FROM HistoryEvents";
+
+	char* errMsg;
+	const char* data = "";
+
+	if (sqlite3_exec(db, getAllEventsQuery, callbackSelectEvents, (void*)data, &errMsg) != SQLITE_OK)
 	{
-		std::cout << "Pogw";
-		return true;
+		std::cout << errMsg;
+		sqlite3_free(errMsg);
 	}
 
+	std::cout << resultsSelect;
+
+	return resultsSelect;
+}
+
+int HistoryEvents::callbackSelectEvents(void* callback, int size, char** data, char** columnName)
+{
+	std::string tempResults;
+
+	for (int i = 0; i < size; i++)
+	{
+		//std::cout << columnName[i] << " = " << data[i] ? data[i] : "NULL";
+		tempResults += columnName[i];
+		tempResults += " = ";
+		tempResults += data[i] ? data[i] : "NULL";
+		tempResults += "\n";
+	};
+
+	resultsSelect = resultsSelect + tempResults;
+
+	return 0;
 }
 
 int HistoryEvents::callbackCreateTable(void* NotUsed, int size, char** data, char** columnName) {
