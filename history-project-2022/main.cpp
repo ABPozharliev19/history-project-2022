@@ -3,7 +3,7 @@
 
 int main()
 {
-	HistoryEvents eventManager;
+	/*HistoryEvents eventManager;
 
 	std::map<std::string, std::string> gosho;
 
@@ -11,6 +11,7 @@ int main()
 
 	eventManager.deleteEventByFilter(gosho);
 
-	eventManager.getAllEvents();
-}
+	eventManager.getAllEvents();*/
 
+	mainMenu();
+}
