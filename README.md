@@ -46,8 +46,8 @@ This is a history-themed project which with the help of linked lists and Grey's 
 
 ## 🧑🏻‍💻 Our Team <a name="our_team"></a>
 
-- <a href = "https://github.com/ABPozharliev19"> Atanas Pozharliev </a> (Scrum Master)
+- <a href = "https://github.com/VRKirov19"> Viktor Kirov </a> (Scrum Master)
+- <a href = "https://github.com/ABPozharliev19"> Atanas Pozharliev </a> (Back-end Developer)
 - <a href = "https://github.com/YIAgafonova19"> Yoana Agafonova </a> (Front-end Developer)
-- <a href = "https://github.com/VRKirov19"> Viktor Kirov </a> (Front-end Developer)
-- <a href = "https://github.com/RPLisitsov19"> Radoslav Lisitsov </a> (Back-end Developer)
+- <a href = "https://github.com/RPLisitsov19"> Radoslav Lisitsov </a> (QA Engineer)
 - <a href = "https://github.com/PRNikolov19"> Petar Nikolov </a> (QA Engineer)
