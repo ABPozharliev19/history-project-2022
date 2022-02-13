@@ -65,5 +65,12 @@ void printBorder()
     goToCoordinates(50, 20);    std::cout << "|";    goToCoordinates(157, 20);    std::cout << "|";
     goToCoordinates(50, 21);    std::cout << "|";    goToCoordinates(157, 21);    std::cout << "|";
     goToCoordinates(50, 22);    std::cout << "|";    goToCoordinates(157, 22);    std::cout << "|";
-    goToCoordinates(50, 23);    std::cout << "------------------------------------------------------------------------------------------------------------";
+    goToCoordinates(50, 23);    std::cout << "|";    goToCoordinates(157, 23);    std::cout << "|";
+    goToCoordinates(50, 24);    std::cout << "|";    goToCoordinates(157, 24);    std::cout << "|";
+    goToCoordinates(50, 25);    std::cout << "|";    goToCoordinates(157, 25);    std::cout << "|";
+    goToCoordinates(50, 26);    std::cout << "|";    goToCoordinates(157, 26);    std::cout << "|";
+    goToCoordinates(50, 27);    std::cout << "|";    goToCoordinates(157, 27);    std::cout << "|";
+    goToCoordinates(50, 28);    std::cout << "|";    goToCoordinates(157, 28);    std::cout << "|";
+    goToCoordinates(50, 29);    std::cout << "|";    goToCoordinates(157, 29);    std::cout << "|";
+    goToCoordinates(50, 30);    std::cout << "------------------------------------------------------------------------------------------------------------";
 }

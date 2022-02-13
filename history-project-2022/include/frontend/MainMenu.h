@@ -49,10 +49,12 @@ void processMainMenuInput(char keyPressedMain)
             break;
 
         case(KEY_ENTER):
+            system("CLS");
             switch (activeItemMain)
             {
                 case(0):
-                    printStart();
+                    
+                    printStartMenu();
                     break;
 
                 case(1):
@@ -60,7 +62,7 @@ void processMainMenuInput(char keyPressedMain)
                     break;
 
                 case(2):
-                    printExit();
+                    inMainMenu = false;
                     break;
 
                 default:
@@ -75,7 +77,6 @@ void processMainMenuInput(char keyPressedMain)
 
 void mainMenu()
 {
-    setCursor(false);
     inMainMenu = true;
 
     while (inMainMenu)
@@ -88,6 +89,4 @@ void mainMenu()
     }
 
     printExit();
-    setCursor(true);
-    setColor(15);
 }
