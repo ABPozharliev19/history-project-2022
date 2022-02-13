@@ -53,8 +53,7 @@ void processMainMenuInput(char keyPressedMain)
             switch (activeItemMain)
             {
                 case(0):
-                    
-                    printStartMenu();
+                    startMenu();
                     break;
 
                 case(1):

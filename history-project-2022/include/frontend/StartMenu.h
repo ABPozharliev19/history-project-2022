@@ -103,5 +103,6 @@ void startMenu()
         processStartMenuInput(keyPressedStart);
     }
     
+    system("CLS");
     mainMenu();
 }
