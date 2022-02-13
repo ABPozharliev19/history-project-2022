@@ -72,13 +72,15 @@ std::string HistoryEvents::getAllEvents()
 
 	resultsSelect = "";
 
-	if (sqlite3_exec(db, getAllEventsQuery, callbackSelectEvents, (void*)data, &errMsg) != SQLITE_OK)
+	auto queryFinished = sqlite3_exec(db, getAllEventsQuery, callbackSelectEvents, (void*)data, &errMsg);
+
+	if (queryFinished != SQLITE_OK)
 	{
 		std::cout << errMsg;
 		sqlite3_free(errMsg);
-	}
 
-	std::cout << resultsSelect;
+		return "";
+	}
 
 	return resultsSelect;
 }
