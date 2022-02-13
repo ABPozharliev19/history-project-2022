@@ -2,9 +2,11 @@
 
 #include "../../libs/sqlite3.h"
 
-#include <iostream>
+#include <chrono>
 #include <string>
 #include <map>
+#include <iostream>
+#include <thread>
 
 class HistoryEvents
 {
