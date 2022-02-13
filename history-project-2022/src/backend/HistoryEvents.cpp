@@ -86,7 +86,6 @@ std::string HistoryEvents::getAllEvents()
 int HistoryEvents::callbackSelectEvents(void* callback, int size, char** data, char** columnName)
 {
 	std::string tempResults;
-
 	for (int i = 0; i < size; i++)
 	{
 		//std::cout << columnName[i] << " = " << data[i] ? data[i] : "NULL";

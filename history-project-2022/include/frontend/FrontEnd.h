@@ -7,6 +7,8 @@
 #define KEY_ESC 27
 #define KEY_ENTER 0x0d
 
+HistoryEvents eventManager;
+
 void setColor(int color)
 {
     if (STD_OUTPUT_HANDLE) {

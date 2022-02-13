@@ -5,11 +5,9 @@
 #include "FrontEnd.h"
 #include "../backend/HistoryEvents.h"
 
-int eventId = 1;
 
 void createNewEvent()
 {
-	HistoryEvents eventManager;
 	std::map<std::string, std::string> newEvent;
 
 	std::string month, year, location, reason, leader, participants, result;
@@ -22,7 +20,6 @@ void createNewEvent()
 	goToCoordinates(70, 21); setColor(14); std::cout << "Event result: "; std::getline(std::cin, result);
 	std::cout << "\n\n\n\n\n\n\n\n\n\n";
 
-	newEvent.insert({ "EventId", std::to_string(eventId) });
 	newEvent.insert({ "Month", month });
 	newEvent.insert({ "Year", year });
 	newEvent.insert({ "Location", location });
@@ -31,7 +28,6 @@ void createNewEvent()
 	newEvent.insert({ "Participants", participants });
 	newEvent.insert({ "Result", result });
 
-	eventId++;
 }
 
 void printCreateEvent()
