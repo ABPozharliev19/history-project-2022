@@ -18,7 +18,6 @@ void createNewEvent()
 	goToCoordinates(70, 19); setColor(14); std::cout << "Event leader: "; std::getline(std::cin, leader);
 	goToCoordinates(70, 20); setColor(14); std::cout << "Event participants: "; std::getline(std::cin, participants);
 	goToCoordinates(70, 21); setColor(14); std::cout << "Event result: "; std::getline(std::cin, result);
-	std::cout << "\n\n\n\n\n\n\n\n\n\n";
 
 	newEvent.insert({ "Month", month });
 	newEvent.insert({ "Year", year });
@@ -36,9 +35,11 @@ void printCreateEvent()
 	setColor(11);
 	printLogo();
 	printBorder();
+	printSoldiers();
 
 	createNewEvent();
 
+	goToCoordinates(0, 31); std::cout << "\n";
 	system("PAUSE");
 	system("CLS");
 }

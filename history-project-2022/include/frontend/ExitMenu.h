@@ -9,6 +9,7 @@ void printExit()
     setColor(11);
     printLogo();
     printBorder();
+    printSoldiers();
     goToCoordinates(90, 15); setColor(14); std::cout << "Thank you for using our program.";
     goToCoordinates(95, 16); setColor(14); std::cout << "We hope you enjoyed it!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
     system("PAUSE");

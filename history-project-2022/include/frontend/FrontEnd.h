@@ -76,3 +76,29 @@ void printBorder()
     goToCoordinates(50, 29);    std::cout << "|";    goToCoordinates(157, 29);    std::cout << "|";
     goToCoordinates(50, 30);    std::cout << "------------------------------------------------------------------------------------------------------------";
 }
+
+void printSoldiers()
+{
+    goToCoordinates(10, 8);    std::cout << "   |\\                |\\";                   goToCoordinates(167, 8);    std::cout << "   |\\                |\\";
+    goToCoordinates(10, 9);    std::cout << "   || .---.          || .---.";               goToCoordinates(167, 9);    std::cout << "   || .---.          || .---.";
+    goToCoordinates(10, 10);    std::cout << "   ||/_____\\         ||/_____\\";           goToCoordinates(167, 10);    std::cout << "   ||/_____\\         ||/_____\\";
+    goToCoordinates(10, 11);    std::cout << "   ||( '.' )         ||( '.' )";             goToCoordinates(167, 11);    std::cout << "   ||( '.' )         ||( '.' )";
+    goToCoordinates(10, 12);    std::cout << "   || \\_-_/_         || \\_-_/_";           goToCoordinates(167, 12);    std::cout << "   || \\_-_/_         || \\_-_/_";
+    goToCoordinates(10, 13);    std::cout << "   :-\"`'V'/ / -.       :-\"`'V'//-.";       goToCoordinates(167, 13);    std::cout << "   :-\"`'V'/ / -.       :-\"`'V'//-.";
+    goToCoordinates(10, 14);    std::cout << "  / ,   |// , `\\    / ,   |// , `\\";       goToCoordinates(167, 14);    std::cout << "  / ,   |// , `\\    / ,   |// , `\\";
+    goToCoordinates(10, 15);    std::cout << " / /|Ll //Ll|| |   / /|Ll //Ll|| |";         goToCoordinates(167, 15);    std::cout << " / /|Ll //Ll|| |   / /|Ll //Ll|| |";
+    goToCoordinates(10, 16);    std::cout << "/_/||__//   || |  /_/||__//   || |";         goToCoordinates(167, 16);    std::cout << "/_/||__//   || |  /_/||__//   || |";
+    goToCoordinates(10, 17);    std::cout << "\\ \\/---|[]==|| |  \\ \\/---|[]==|| |";     goToCoordinates(167, 17);    std::cout << "\\ \\/---|[]==|| |  \\ \\/---|[]==|| |";
+    goToCoordinates(10, 18);    std::cout << " \\/\\__/ |   \\| |   \\/\\__/ |   \\| |";   goToCoordinates(167, 18);    std::cout << " \\/\\__/ |   \\| |   \\/\\__/ |   \\| |";
+    goToCoordinates(10, 19);    std::cout << " /\\|_   | Ll_\\ |   /|/_   | Ll_\\ |";      goToCoordinates(167, 19);    std::cout << " /\\|_   | Ll_\\ |   /|/_   | Ll_\\ |";
+    goToCoordinates(10, 20);    std::cout << " `--|`^\"\"\"^`||_|   `--|`^\"\"\"^`||_|";   goToCoordinates(167, 20);    std::cout << " `--|`^\"\"\"^`||_|   `--|`^\"\"\"^`||_|";
+    goToCoordinates(10, 21);    std::cout << "    |   |   ||/       |   |   ||/";          goToCoordinates(167, 21);    std::cout << "    |   |   ||/       |   |   ||/";
+    goToCoordinates(10, 22);    std::cout << "    |   |   |         |   |   |";            goToCoordinates(167, 22);    std::cout << "    |   |   |         |   |   |";
+    goToCoordinates(10, 23);    std::cout << "    |   |   |         |   |   |";            goToCoordinates(167, 23);    std::cout << "    |   |   |         |   |   |";
+    goToCoordinates(10, 24);    std::cout << "    |   |   |         |   |   |";            goToCoordinates(167, 24);    std::cout << "    |   |   |         |   |   |";
+    goToCoordinates(10, 25);    std::cout << "    L___l___J         L___l___J";            goToCoordinates(167, 25);    std::cout << "    L___l___J         L___l___J";
+    goToCoordinates(10, 26);    std::cout << "     |_ | _|           |_ | _|";             goToCoordinates(167, 26);    std::cout << "     |_ | _|           |_ | _|";
+    goToCoordinates(10, 27);    std::cout << "    (___|___)         (___|___)";            goToCoordinates(167, 27);    std::cout << "    (___|___)         (___|___)";
+    goToCoordinates(10, 28);    std::cout << "     ^^^ ^^^           ^^^ ^^^";             goToCoordinates(167, 28);    std::cout << "     ^^^ ^^^           ^^^ ^^^";
+
+}

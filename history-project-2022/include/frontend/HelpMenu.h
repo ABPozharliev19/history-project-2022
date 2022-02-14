@@ -9,6 +9,7 @@ void printHelp()
     setColor(11);
     printLogo();
     printBorder();
+    printSoldiers();
     goToCoordinates(57, 15); setColor(14); std::cout << "This is a history-themed project which with the help of linked lists and Grey's code gives";
     goToCoordinates(57, 16); setColor(14); std::cout << "the user the opportunity to create, read, update, and delete historical events.The program"; 
     goToCoordinates(57, 17); setColor(14); std::cout << "currently has historical events which occurred on Bulgarian soiland involved Bulgarian";

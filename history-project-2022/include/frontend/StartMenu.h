@@ -24,6 +24,7 @@ void printStartMenu()
     setColor(11);
     printLogo();
     printBorder();
+    printSoldiers();
 
     startMenuItemColor[0] = 11;
     startMenuItemColor[1] = 11;
