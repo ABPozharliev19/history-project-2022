@@ -8,7 +8,6 @@
 
 void createNewEvent()
 {
-	std::map<std::string, std::string> newEvent;
 
 	std::string month, year, location, reason, leader, participants, result;
 	goToCoordinates(70, 15); setColor(14); std::cout << "Event month: "; std::getline(std::cin, month);
@@ -19,14 +18,7 @@ void createNewEvent()
 	goToCoordinates(70, 20); setColor(14); std::cout << "Event participants: "; std::getline(std::cin, participants);
 	goToCoordinates(70, 21); setColor(14); std::cout << "Event result: "; std::getline(std::cin, result);
 
-	newEvent.insert({ "Month", month });
-	newEvent.insert({ "Year", year });
-	newEvent.insert({ "Location", location });
-	newEvent.insert({ "Reason", reason });
-	newEvent.insert({ "Leader", leader });
-	newEvent.insert({ "Participants", participants });
-	newEvent.insert({ "Result", result });
-
+	eventManager.insertEvent( month, year, location, reason, leader, participants, result );
 }
 
 void printCreateEvent()
